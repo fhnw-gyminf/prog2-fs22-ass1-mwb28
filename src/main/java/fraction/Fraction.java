@@ -93,12 +93,20 @@ public class Fraction {
          return newFraction;
          
     }
+    public boolean equals (Fraction f){
+        if(f.denominator== this.denominator && f.nominator==this.nominator){
+            return true;
+        }
+        return false;
+    }
 
     public String toString(){
          
         return nominator + "/"+ denominator;
 
     }
+    
+
 
     private static int gcd(int x, int y) {
         if (y == 0) {
