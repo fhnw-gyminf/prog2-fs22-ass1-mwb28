@@ -41,6 +41,11 @@ public class PongGame {
     }
 
 	public void drawGame(Window window) {
+        
+        ball.draw(window);
+        playerLeft.draw(window);
+        playerRight.draw(window);
+
         // TODO Zeichnet die drei Game Objekte.
         // TODO Zeichnet den Punktestand.
 	}

@@ -1,5 +1,7 @@
 package pong;
 
+import gui.Window;
+
 public class Ball extends GameObject {
     private int vy;
     private int vx;
@@ -14,6 +16,11 @@ public class Ball extends GameObject {
         this.vy = (int) (signY * (2 + (Math.random() * 4)));   
     }
 
-    
+    @Override
+    public void draw(Window window) {
+        window.fillCircle(getX(), getY(), 20 );
+        
+    }
+
     
 }
