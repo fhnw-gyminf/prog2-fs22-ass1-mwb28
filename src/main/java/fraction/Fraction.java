@@ -94,6 +94,12 @@ public class Fraction {
          
     }
 
+    public String toString(){
+         
+        return nominator + "/"+ denominator;
+
+    }
+
     private static int gcd(int x, int y) {
         if (y == 0) {
         return x;
