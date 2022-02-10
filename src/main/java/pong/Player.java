@@ -13,9 +13,19 @@ public class Player extends GameObject {
     }
 
     @Override public void draw(Window window){
+        window.setColor(0, 0, 0);
         window.fillRect(super.getX()-barwidth/2, super.getY()-barheight/2, barwidth, barheight);
 
         
+    }
+
+    
+    public void moveUp() {
+        move(0, -3);
+
+    }
+    public void moveDown(){
+        move(0, 3);
     }
 
     }
