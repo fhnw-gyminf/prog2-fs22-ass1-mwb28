@@ -26,13 +26,15 @@ public class Ball extends GameObject {
 
     }
     public void bounceOfVertical(){
-       move(vx*(-1), vy);
+       vy=-vy;
+        move(vx, vy);
        
        
         
     }
     public void bounceOfHorizontal(){
-        //move(-vx, vy);
+        vx =-vx;
+        move(vx, vy);
     }
 
     
