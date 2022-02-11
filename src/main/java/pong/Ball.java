@@ -28,8 +28,7 @@ public class Ball extends GameObject {
     public void bounceOfVertical(){
        vy=-vy;
         move(vx, vy);
-       
-       
+         
         
     }
     public void bounceOfHorizontal(){
