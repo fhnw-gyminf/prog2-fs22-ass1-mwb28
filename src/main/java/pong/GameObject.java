@@ -53,11 +53,14 @@ public class GameObject {
     }
 
     public void draw(Window window){
-     
-      if (getX()==0 && getY()==0){
         window.setColor(255, 0, 0);
-          window.drawLine(0, 0,800, 0);
-      }
+        window.setStrokeWidth(20);
+        //draw north border:
+      if (getX()==width/2 && getY()==0){window.drawLine(0, 0,width, 0);}
+        // draw west border
+      if (getX()== 0 && getY()==height/2){ window.drawLine(0, 0, 0, height);}
+      // draw east border
+      if (getX()== width && getY()==height/2){ window.drawLine(width, 0, width, height);}
       
      
     }

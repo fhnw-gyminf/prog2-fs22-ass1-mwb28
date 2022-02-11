@@ -9,7 +9,7 @@ public class Ball extends GameObject {
 
 
     public Ball (int x, int y){
-        super(x, y,0 , 0);
+        super(x, y,20, 20);
         int signX = Math.random() > 0.5 ? 1 : -1;
         int signY = Math.random() > 0.5 ? 1 : -1;
         this.vx = (int) (signX * (2 + (Math.random() * 4)));
@@ -20,6 +20,19 @@ public class Ball extends GameObject {
     public void draw(Window window) {
         window.fillCircle(getX(), getY(), 20 );
         
+    }
+    public void steo(){
+        move(vx, vy);
+
+    }
+    public void bounceOfVertical(){
+       move(vx*(-1), vy);
+       
+       
+        
+    }
+    public void bounceOfHorizontal(){
+        //move(-vx, vy);
     }
 
     
