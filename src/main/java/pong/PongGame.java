@@ -64,7 +64,10 @@ public class PongGame {
         north.draw(window);
          south.draw(window);
         west.draw(window);
-        window.drawString("Punktestand", width/2, 20);
+        String getPointsleft= Integer.toString(playerLeft.getScore());
+        String getPointsright = Integer.toString(playerRight.getScore());
+
+        window.drawString(getPointsleft + ":"+ getPointsright, width/2, 20);
 
 
         // TODO Zeichnet die drei Game Objekte.

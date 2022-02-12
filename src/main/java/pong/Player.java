@@ -31,11 +31,11 @@ public class Player extends GameObject {
         }
     
     public void moveUp() {
-        move(0, -3);
+        move(0, -5);
 
     }
     public void moveDown(){
-        move(0, 3);
+        move(0, 5);
     }
 
     }
