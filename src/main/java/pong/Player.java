@@ -6,6 +6,7 @@ public class Player extends GameObject {
     private int score;
     private static int barwidth = 15;
     private static  int barheight =100;
+    // private static int speedpanels= 3;
 
     public Player(int x, int y){
         super(x, y, barwidth, barheight);
@@ -28,9 +29,6 @@ public class Player extends GameObject {
         score = score + 10;
 
         }
-
-    
-
     
     public void moveUp() {
         move(0, -3);
