@@ -20,47 +20,38 @@ public class GameObject {
         return x;
     }
 
-    public void setX(int x) {
-        this.x = x;
-    }
-
+    
     public int getY() {
         return y;
     }
 
-    public void setY(int y) {
-        this.y = y;
-    }
-
+    
     public int getWidth() {
         return width;
     }
 
-    public void setWidth(int width) {
-        this.width = width;
-    }
+   
 
     public int getHeight() {
         return height;
     }
 
-    public void setHeight(int height) {
-        this.height = height;
-    }
+   
     public void move (int dx, int dy){
         this.x += dx;
         this.y += dy;
     }
 
     public void draw(Window window){
-        window.setColor(255, 0, 0);
-        window.setStrokeWidth(20);
+
+        
+        
         //draw north border:
-      if (getX()==width/2 && getY()==0){window.drawLine(0, 0,width, 0);}
-        // draw west border
-      if (getX()== 0 && getY()==height/2){ window.drawLine(0, 0, 0, height);}
-      // draw east border
-      if (getX()== width && getY()==height/2){ window.drawLine(width, 0, width, height);}
+    //   if (getX()==width/2 && getY()==0){window.drawLine(0, 0,width, 0);}
+    //     // draw west border
+    //   if (getX()== 0 && getY()==height/2){ window.drawLine(0, 0, 0, height);}
+    //   // draw east border
+    //   if (getX()== width && getY()==height/2){ window.drawLine(width, 0, width, height);}
       
      
     }

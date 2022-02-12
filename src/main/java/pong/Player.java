@@ -11,6 +11,12 @@ public class Player extends GameObject {
         super(x, y, barwidth, barheight);
                   
     }
+    
+
+    public int getScore() {
+        return score;
+    }
+
 
     @Override public void draw(Window window){
         window.setColor(0, 0, 0);
@@ -18,6 +24,12 @@ public class Player extends GameObject {
 
         
     }
+    public void incscore(){
+        score = score + 10;
+
+        }
+
+    
 
     
     public void moveUp() {
