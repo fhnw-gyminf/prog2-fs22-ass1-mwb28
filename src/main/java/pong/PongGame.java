@@ -52,8 +52,7 @@ public class PongGame {
         if (ball.intersects(west)){
             playerRight.incscore();
             this.ball = new Ball(width/2, height/2);
-            
-   
+        
         }
         
         if (ball.intersects(east)){
@@ -77,7 +76,7 @@ public class PongGame {
         String getPointsleft= Integer.toString(playerLeft.getScore());
         String getPointsright = Integer.toString(playerRight.getScore());
 
-        window.drawString(getPointsleft + ":"+ getPointsright, width/2, (int)(height/40));
+        window.drawString(getPointsleft + ":"+ getPointsright, width/2, height/40);
 
 
         // TODO Zeichnet die drei Game Objekte.
