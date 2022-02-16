@@ -45,14 +45,22 @@ public class PongGame {
     }
 
     public void step() {
-        ball.steo();
+        ball.step();
         if (ball.intersects(north) || ball.intersects(south)){ball.bounceOfVertical();}
         if (ball.intersects(playerLeft)){ ball.bounceOfHorizontal();} 
-        if (ball.intersects(playerRight)){ball.bounceOfHorizontal(); }
-        if (ball.intersects(west)){playerRight.incscore();};
-        if (ball.intersects(east)){playerLeft.incscore();};
-        
+        if (ball.intersects(playerRight)){ ball.bounceOfHorizontal(); }
+        if (ball.intersects(west)){
+            playerRight.incscore();
+            this.ball = new Ball(width/2, height/2);
+            
    
+        }
+        
+        if (ball.intersects(east)){
+           
+            this.ball = new Ball(width/2, height/2);
+            playerLeft.incscore();}
+    
 
         // TODO Einen Zeitschritt prozessieren, also den Ball bewegen und Kollisionen behandeln.
     }
@@ -69,7 +77,7 @@ public class PongGame {
         String getPointsleft= Integer.toString(playerLeft.getScore());
         String getPointsright = Integer.toString(playerRight.getScore());
 
-        window.drawString(getPointsleft + ":"+ getPointsright, width/2, 20);
+        window.drawString(getPointsleft + ":"+ getPointsright, width/2, (int)(height/40));
 
 
         // TODO Zeichnet die drei Game Objekte.

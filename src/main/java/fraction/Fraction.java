@@ -22,7 +22,7 @@ public class Fraction {
         return numerator;
     }
     
-    public int getDenumerator() {
+    public int getDenominator() {
         return denominator;
     }
     
@@ -60,23 +60,10 @@ public class Fraction {
         
     }
     public Fraction divFraction(Fraction source){
-        
-        int newNumerator;
-        int newDenominator;
-         newNumerator = this.numerator * source.denominator;
-         newDenominator = this.denominator * source.numerator;
-         
-         return new Fraction(newNumerator,newDenominator);
+         return new Fraction(this.numerator * source.denominator,this.denominator * source.numerator);
     }
     public Fraction multyFraction(Fraction source){
-           
-        int newNumerator;
-        int newDenominator;
-         newNumerator = this.numerator * source.numerator;
-         newDenominator = this.denominator * source.denominator;
-        
-        
-         return new Fraction(newNumerator,newDenominator);
+           return new Fraction(this.numerator * source.numerator,this.denominator * source.denominator);
          
     }
     public boolean equals (Fraction f){

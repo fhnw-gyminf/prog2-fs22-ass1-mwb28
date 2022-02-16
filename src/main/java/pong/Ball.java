@@ -5,7 +5,8 @@ import gui.Window;
 public class Ball extends GameObject {
     private int vy;
     private int vx;
-    private final static int DIAMETER = 40;
+    private final static int DIAMETER = PongGui.getWidth()/20;
+    
      
 
 
@@ -17,12 +18,13 @@ public class Ball extends GameObject {
         this.vy = (int) (signY * (2 + (Math.random() * 4)));   
     }
 
+   
     @Override
     public void draw(Window window) {
         window.fillCircle(getX(), getY(),DIAMETER/2 );
         
     }
-    public void steo(){
+    public void step(){
         move(vx, vy);
 
     }
@@ -35,7 +37,19 @@ public class Ball extends GameObject {
     public void bounceOfHorizontal(){
         vx =-vx;
        
+       
+    }
+
+    public void reset(){
+        super.setX(PongGui.getWidth()/2);
+        super.setY(PongGui.getHeight()/2);
+
+
+    }
+    
+        
+
     }
 
     
-}
+
