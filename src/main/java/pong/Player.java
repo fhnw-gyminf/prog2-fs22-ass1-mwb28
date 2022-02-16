@@ -4,12 +4,12 @@ import gui.Window;
 public class Player extends GameObject {
 
     private int score;
-    private static int barwidth = 15;
-    private static  int barheight =100;
+    private static final int BARWIDTH = (int)(PongGui.getWIDTH()/53) ;
+    private static final int BARHEIGHT =(int)(PongGui.getHEIGHT()/5);
     // private static int speedpanels= 3;
 
     public Player(int x, int y){
-        super(x, y, barwidth, barheight);
+        super(x, y, BARWIDTH, BARHEIGHT);
                   
     }
     
@@ -21,7 +21,7 @@ public class Player extends GameObject {
 
     @Override public void draw(Window window){
         window.setColor(0, 0, 0);
-        window.fillRect(super.getX()-barwidth/2, super.getY()-barheight/2, barwidth, barheight);
+        window.fillRect(super.getX()-BARWIDTH/2, super.getY()-BARHEIGHT/2, BARWIDTH, BARHEIGHT);
 
         
     }

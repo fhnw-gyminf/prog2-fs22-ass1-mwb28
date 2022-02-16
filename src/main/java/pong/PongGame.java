@@ -19,8 +19,8 @@ public class PongGame {
         this.width = width;
         this.height = height;
         this.ball = new Ball(width/2, height/2);
-        this.playerLeft = new Player(30, 200);
-        this.playerRight = new Player(760, 100);
+        this.playerLeft = new Player((int)width/25, (int)height/2);
+        this.playerRight = new Player((int)(width/1.05),(int)(height/2));
         this.east= new GameObject(width, height/2, 0,height);
         this.north= new GameObject(width/2,0, width,0);
         this.south= new GameObject(width/2, height, width,0);
@@ -31,24 +31,26 @@ public class PongGame {
     }
 
     public void handleEvents(Window window) {
-        if (window.isKeyPressed("up")) {playerRight.moveUp();}
-        if (window.isKeyPressed("down")) {playerRight.moveDown();}
-        if (window.isKeyPressed("w")) {playerLeft.moveUp();}
-        if (window.isKeyPressed("s")) {playerLeft.moveDown();}
+        // controlling PlayerRight:
+        if (window.isKeyPressed("up"))
+            if (playerRight.intersects(north)){}else{playerRight.moveUp();}
+        if (window.isKeyPressed("down"))
+            if(playerRight.intersects(south)){}else {playerRight.moveDown();}
+
+        // controlling PlayerLeft:
+        if (window.isKeyPressed("w"))
+            if(playerLeft.intersects(north)){}else {playerLeft.moveUp();}
+        if (window.isKeyPressed("s"))
+            if (playerLeft.intersects(south)){} else{playerLeft.moveDown();}
     }
 
     public void step() {
         ball.steo();
         if (ball.intersects(north) || ball.intersects(south)){ball.bounceOfVertical();}
-        if (ball.intersects(playerLeft)){
-            playerLeft.incscore();
-            ball.bounceOfHorizontal();
-        } if (ball.intersects(playerRight))
-         {
-            ball.bounceOfHorizontal();
-            playerRight.incscore();
-            
-        }
+        if (ball.intersects(playerLeft)){ ball.bounceOfHorizontal();} 
+        if (ball.intersects(playerRight)){ball.bounceOfHorizontal(); }
+        if (ball.intersects(west)){playerRight.incscore();};
+        if (ball.intersects(east)){playerLeft.incscore();};
         
    
 
