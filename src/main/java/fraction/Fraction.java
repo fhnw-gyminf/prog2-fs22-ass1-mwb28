@@ -80,10 +80,8 @@ public class Fraction {
          
     }
     public boolean equals (Fraction f){
-        if(f.denominator== this.denominator && f.numerator==this.numerator){
-            return true;
-        }
-        return false;
+       
+        return f.denominator== this.denominator && f.numerator==this.numerator;
     }
 
     public String toString(){
@@ -122,6 +120,10 @@ public static void main(String[] args) {
     Fraction f7 = new Fraction(1,2);
     Fraction f8 = new Fraction(1,3);
     System.out.println(f7 + ":" + f8 + "=" + f7.divFraction(f8));
+
+    Fraction f9 = new Fraction(-1,2);
+    Fraction f10 = new Fraction(1,-2);
+    System.out.println(f9.equals(f10));
     
 }
 
