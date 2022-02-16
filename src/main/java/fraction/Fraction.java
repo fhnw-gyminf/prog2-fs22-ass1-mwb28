@@ -2,20 +2,20 @@ package fraction;
 
 public class Fraction {
     private int numerator;
-    private int denumerator;
+    private int denominator;
 
-    public Fraction(int numerator, int denumerator){
-        int gcd = gcd(numerator, denumerator);
+    public Fraction(int numerator, int denominator){
+        int gcd = gcd(numerator, denominator);
         
         this.numerator = numerator / gcd;
-        this.denumerator = denumerator / gcd;
+        this.denominator = denominator / gcd;
     }
     public Fraction(int nominator){
         this(nominator,1);
     }
     public Fraction (Fraction source){
         this.numerator = source.numerator ;
-        this.denumerator = source.denumerator;
+        this.denominator = source.denominator;
 
     }
     
@@ -24,73 +24,73 @@ public class Fraction {
     }
     
     public int getDenumerator() {
-        return denumerator;
+        return denominator;
     }
     
     public  Fraction addFraction(Fraction source){
-        Fraction newFraction;    
+           
         int newNumerator;
-        int newDenumerator;
-        if (this.denumerator == source.denumerator){
+        int newDenominator;
+        if (this.denominator == source.denominator){
             newNumerator = this.numerator + source.numerator;
-            newDenumerator = denumerator;
+            newDenominator = denominator;
         }
         else {
-           newNumerator = numerator * source.denumerator + source.numerator * denumerator;
-           newDenumerator = denumerator * source.denumerator ;   
+           newNumerator = numerator * source.denominator + source.numerator * denominator;
+           newDenominator = denominator * source.denominator ;   
         }
-
-        newNumerator = newNumerator / gcd(newNumerator, newDenumerator);
-        newDenumerator = newDenumerator / gcd(newDenumerator, newDenumerator);
-        newFraction = new Fraction(newNumerator,newDenumerator);
-        return newFraction;
+        int gcd = gcd(newNumerator, newDenominator);
+        newNumerator = newNumerator / gcd;
+        newDenominator = newDenominator / gcd;
+        
+        return new Fraction(newNumerator,newDenominator);
     }
     public Fraction subFraction(Fraction source){
-        Fraction newFraction;    
+          
         int newNumerator;
-        int newDenumerator;
-        if (this.denumerator == source.denumerator){
+        int newDenominator;
+        
+        if (this.denominator == source.denominator){
             newNumerator = this.numerator - source.numerator;
-            newDenumerator = denumerator;
+            newDenominator = denominator;
         }
         else {
-           newNumerator = numerator * source.denumerator - source.numerator * denumerator;
-           newDenumerator = denumerator * source.denumerator ;   
+           newNumerator = numerator * source.denominator - source.numerator * denominator;
+           newDenominator = denominator * source.denominator ;   
         }
-
-        newNumerator = newNumerator / gcd(newNumerator, newDenumerator);
-        newDenumerator = newDenumerator / gcd(newDenumerator, newDenumerator);
-        newFraction = new Fraction(newNumerator,newDenumerator);
-        return newFraction;
+        int gcd = gcd(newNumerator,newDenominator);
+        newNumerator = newNumerator / gcd;
+        newDenominator = newDenominator / gcd;
+        return new Fraction(newNumerator,newDenominator);
         
     }
     public Fraction divFraction(Fraction source){
-        Fraction newFraction;    
+        
         int newNumerator;
-        int newDenumerator;
-         newNumerator = this.numerator * source.denumerator;
-         newDenumerator = this.denumerator * source.numerator;
+        int newDenominator;
+         newNumerator = this.numerator * source.denominator;
+         newDenominator = this.denominator * source.numerator;
+         int gcd = gcd(newNumerator, newDenominator);
+         newNumerator = newNumerator / gcd;
+         newDenominator = newDenominator / gcd;
          
-         newNumerator = newNumerator / gcd(newNumerator, newDenumerator);
-         newDenumerator = newDenumerator / gcd(newDenumerator, newDenumerator);
-         newFraction = new Fraction(newNumerator,newDenumerator);
-         return newFraction;
+         return new Fraction(newNumerator,newDenominator);S
     }
     public Fraction multyFraction(Fraction source){
-        Fraction newFraction;    
+           
         int newNumerator;
-        int newDenumerator;
+        int newDenominator;
          newNumerator = this.numerator * source.numerator;
-         newDenumerator = this.denumerator * source.denumerator;
-
-         newNumerator = newNumerator / gcd(newNumerator, newDenumerator);
-         newDenumerator = newDenumerator / gcd(newDenumerator, newDenumerator);
-         newFraction = new Fraction(newNumerator,newDenumerator);
-         return newFraction;
+         newDenominator = this.denominator * source.denominator;
+        int gcd = gcd(newNumerator, newDenominator);
+         newNumerator = newNumerator / gcd;
+         newDenominator = newDenominator / gcd;
+        
+         return new Fraction(newNumerator,newDenominator);
          
     }
     public boolean equals (Fraction f){
-        if(f.denumerator== this.denumerator && f.numerator==this.numerator){
+        if(f.denominator== this.denominator && f.numerator==this.numerator){
             return true;
         }
         return false;
@@ -98,7 +98,7 @@ public class Fraction {
 
     public String toString(){
          
-        return numerator + "/"+ denumerator;
+        return numerator + "/"+ denominator;
 
     }
     
@@ -119,7 +119,12 @@ public class Fraction {
         }
        
         
-
+public static void main(String[] args) {
+    Fraction f1 = new Fraction(1,2);
+    Fraction f2 = new Fraction(1,3);
+    System.out.println(f1 + "+" + f2 + "=" + f1.addFraction(f2));
+    
+}
 
 
 
