@@ -5,11 +5,12 @@ import gui.Window;
 public class Ball extends GameObject {
     private int vy;
     private int vx;
+    private final static int DIAMETER = 40;
      
 
 
     public Ball (int x, int y){
-        super(x, y,20, 20);
+        super(x, y,DIAMETER, DIAMETER);
         int signX = Math.random() > 0.5 ? 1 : -1;
         int signY = Math.random() > 0.5 ? 1 : -1;
         this.vx = (int) (signX * (2 + (Math.random() * 4)));
@@ -18,7 +19,7 @@ public class Ball extends GameObject {
 
     @Override
     public void draw(Window window) {
-        window.fillCircle(getX(), getY(), 20 );
+        window.fillCircle(getX(), getY(),DIAMETER/2 );
         
     }
     public void steo(){
@@ -27,13 +28,13 @@ public class Ball extends GameObject {
     }
     public void bounceOfVertical(){
        vy=-vy;
-        move(vx, vy);
+       
          
         
     }
     public void bounceOfHorizontal(){
         vx =-vx;
-        move(vx, vy);
+       
     }
 
     
