@@ -33,15 +33,15 @@ public class PongGame {
     public void handleEvents(Window window) {
         // controlling PlayerRight:
         if (window.isKeyPressed("up"))
-            if (playerRight.intersects(north)){}else{playerRight.moveUp();}
+            if (!playerRight.intersects(north)){playerRight.moveUp();}
         if (window.isKeyPressed("down"))
-            if(playerRight.intersects(south)){}else {playerRight.moveDown();}
+            if(!playerRight.intersects(south)){playerRight.moveDown();}
 
         // controlling PlayerLeft:
         if (window.isKeyPressed("w"))
-            if(playerLeft.intersects(north)){}else {playerLeft.moveUp();}
+            if(!playerLeft.intersects(north)){playerLeft.moveUp();}
         if (window.isKeyPressed("s"))
-            if (playerLeft.intersects(south)){} else{playerLeft.moveDown();}
+            if (!playerLeft.intersects(south)){playerLeft.moveDown();}
     }
 
     public void step() {
