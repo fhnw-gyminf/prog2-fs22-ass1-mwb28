@@ -51,6 +51,7 @@ public class PongGame {
         if (ball.intersects(playerRight)){ ball.bounceOfHorizontal(); }
         if (ball.intersects(west)){
             playerRight.incscore();
+            
             this.ball = new Ball(width/2, height/2);
         
         }
@@ -75,6 +76,10 @@ public class PongGame {
         west.draw(window);
         String getPointsleft= Integer.toString(playerLeft.getScore());
         String getPointsright = Integer.toString(playerRight.getScore());
+        // if (ball.intersects(west)|| ball.intersects(east)){
+        //     window.drawString("READY FOR NEXT ROUND?", width/2, height/2);}
+            // window.refreshAndClear(20);
+        // }
         window.setFontSize(25);
         window.drawString(getPointsleft + ":"+ getPointsright, width/2, height/40);
 
@@ -82,4 +87,5 @@ public class PongGame {
         // TODO Zeichnet die drei Game Objekte.
         // TODO Zeichnet den Punktestand.
 	}
+   
 }
