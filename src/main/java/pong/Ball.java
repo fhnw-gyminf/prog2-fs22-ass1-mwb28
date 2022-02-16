@@ -5,7 +5,8 @@ import gui.Window;
 public class Ball extends GameObject {
     private int vy;
     private int vx;
-    private int bounceCounter;
+    private static int bounceCounter;
+    private static boolean noIntersect= true;
     private final static int DIAMETER = PongGui.getWidth()/20;
     
      
@@ -28,21 +29,33 @@ public class Ball extends GameObject {
     }
     public void step(){
         move(vx, vy);
+        if(getX()>=PongGui.getWidth()*0.3 && getX()<=PongGui.getWidth()*0.6){
+            noIntersect=true;
+        }
 
     }
     public void bounceOfVertical(){
-       vy=-vy;
+      
+
+        vy*=-1;
        
          
         
     }
     public void bounceOfHorizontal(){
-        if (vx<=0){
-            vx= Math.abs(vx);
-        }else{
-            vx =-Math.abs(vx);
+        if (noIntersect){
+            vx*=-1;
+            noIntersect = false;
         }
         
+        // if(vx > 0){vx= - Math.abs(vx);
+        //     move(vx, vy);
+        // }
+        // else {vx= Math.abs(vx);
+        //     move(vx, vy);
+        // }
+        //vx*=-1;
+    
         bounceCounter++;
        encreaseVelocity();
 
@@ -57,8 +70,8 @@ public class Ball extends GameObject {
 
     }
     private  void encreaseVelocity(){
-        int randomChange = Math.random() > 0.5 ? 3 :4;
-        if (bounceCounter==randomChange){
+        int randomChange = Math.random() > 0.5 ? 2 :3;
+        if (bounceCounter%randomChange==0){
            
             vx+=5;
             vy+=5;

@@ -75,7 +75,7 @@ public class PongGame {
         west.draw(window);
         String getPointsleft= Integer.toString(playerLeft.getScore());
         String getPointsright = Integer.toString(playerRight.getScore());
-
+        window.setFontSize(25);
         window.drawString(getPointsleft + ":"+ getPointsright, width/2, height/40);
 
 
