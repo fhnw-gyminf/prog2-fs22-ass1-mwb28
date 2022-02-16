@@ -14,8 +14,7 @@ public class Fraction {
         this(nominator,1);
     }
     public Fraction (Fraction source){
-        this.numerator = source.numerator ;
-        this.denominator = source.denominator;
+       this(source.numerator, source.denominator);
 
     }
     
@@ -39,9 +38,7 @@ public class Fraction {
            newNumerator = numerator * source.denominator + source.numerator * denominator;
            newDenominator = denominator * source.denominator ;   
         }
-        int gcd = gcd(newNumerator, newDenominator);
-        newNumerator = newNumerator / gcd;
-        newDenominator = newDenominator / gcd;
+        
         
         return new Fraction(newNumerator,newDenominator);
     }
@@ -58,9 +55,7 @@ public class Fraction {
            newNumerator = numerator * source.denominator - source.numerator * denominator;
            newDenominator = denominator * source.denominator ;   
         }
-        int gcd = gcd(newNumerator,newDenominator);
-        newNumerator = newNumerator / gcd;
-        newDenominator = newDenominator / gcd;
+        
         return new Fraction(newNumerator,newDenominator);
         
     }
@@ -70,11 +65,8 @@ public class Fraction {
         int newDenominator;
          newNumerator = this.numerator * source.denominator;
          newDenominator = this.denominator * source.numerator;
-         int gcd = gcd(newNumerator, newDenominator);
-         newNumerator = newNumerator / gcd;
-         newDenominator = newDenominator / gcd;
          
-         return new Fraction(newNumerator,newDenominator);S
+         return new Fraction(newNumerator,newDenominator);
     }
     public Fraction multyFraction(Fraction source){
            
@@ -82,9 +74,7 @@ public class Fraction {
         int newDenominator;
          newNumerator = this.numerator * source.numerator;
          newDenominator = this.denominator * source.denominator;
-        int gcd = gcd(newNumerator, newDenominator);
-         newNumerator = newNumerator / gcd;
-         newDenominator = newDenominator / gcd;
+        
         
          return new Fraction(newNumerator,newDenominator);
          
@@ -123,6 +113,15 @@ public static void main(String[] args) {
     Fraction f1 = new Fraction(1,2);
     Fraction f2 = new Fraction(1,3);
     System.out.println(f1 + "+" + f2 + "=" + f1.addFraction(f2));
+    Fraction f3 = new Fraction(1,2);
+    Fraction f4 = new Fraction(1,3);
+    System.out.println(f3 + "-" + f4 + "=" + f3.subFraction(f4));
+    Fraction f5 = new Fraction(1,2);
+    Fraction f6 = new Fraction(1,3);
+    System.out.println(f5 + "*" + f6 + "=" + f5.multyFraction(f6));
+    Fraction f7 = new Fraction(1,2);
+    Fraction f8 = new Fraction(1,3);
+    System.out.println(f7 + ":" + f8 + "=" + f7.divFraction(f8));
     
 }
 
