@@ -8,8 +8,8 @@ public class PongGui {
     
 
 
-    private static final int WIDTH = 1600;
-    private static final int HEIGHT = 1200;
+    private static final int WIDTH = 800;
+    private static final int HEIGHT = 600;
 
     public static int getWidth() {
         return WIDTH;

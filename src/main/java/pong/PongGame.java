@@ -21,10 +21,10 @@ public class PongGame {
         this.ball = new Ball(width/2, height/2);
         this.playerLeft = new Player((int)width/25, (int)height/2);
         this.playerRight = new Player((int)(width/1.05),(int)(height/2));
-        this.east= new GameObject(width, height/2, 0,height);
-        this.north= new GameObject(width/2,0, width,0);
-        this.south= new GameObject(width/2, height, width,0);
-        this.west= new GameObject(0, height/2, 0,height);
+        this.east= new Wall(width, height/2, 0,height);
+        this.north= new Wall(width/2,0, width,0);
+        this.south= new Wall(width/2, height, width,0);
+        this.west= new Wall(0, height/2, 0,height);
         
 
 

@@ -1,7 +1,7 @@
 package pong;
 import gui.Window;
 
-public class GameObject {
+abstract class  GameObject {
     
 
     private int x;
@@ -49,7 +49,7 @@ public class GameObject {
         this.y += dy;
     }
 
-    public void draw(Window window){
+    public  void draw(Window window){
 
         
         
