@@ -49,19 +49,7 @@ abstract class  GameObject {
         this.y += dy;
     }
 
-    public  void draw(Window window){
-
-        
-        
-        //draw north border:
-    //   if (getX()==width/2 && getY()==0){window.drawLine(0, 0,width, 0);}
-    //     // draw west border
-    //   if (getX()== 0 && getY()==height/2){ window.drawLine(0, 0, 0, height);}
-    //   // draw east border
-    //   if (getX()== width && getY()==height/2){ window.drawLine(width, 0, width, height);}
-      
-     
-    }
+    public abstract void draw(Window window);
 
     public boolean intersects (GameObject other){
         return x - width/2 < other.x + other.width/2 

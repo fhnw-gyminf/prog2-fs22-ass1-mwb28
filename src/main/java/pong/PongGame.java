@@ -81,7 +81,7 @@ public class PongGame {
             // window.refreshAndClear(20);
         // }
         window.setFontSize(25);
-        window.drawString(getPointsleft + ":"+ getPointsright, width/2, height/40);
+        window.drawString(getPointsleft + ":"+ getPointsright, width/2, height/20);
 
 
         // TODO Zeichnet die drei Game Objekte.
