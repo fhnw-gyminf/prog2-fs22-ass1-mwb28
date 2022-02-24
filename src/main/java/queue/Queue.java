@@ -4,8 +4,14 @@ public class Queue {
 	/**
 	 * Initializes a queue with a given capacity.
 	 */
+	private int[] queue;
+	private int capacity;
+	private int numberOfElements;
+
+
 	public Queue(int capacity) {
-		// TODO
+		this.queue = new int[capacity];
+		this.capacity = capacity;
 	}
 
 	/**
@@ -18,7 +24,12 @@ public class Queue {
 	 * @return {@code true} if the element could be added, {@code false} otherwise.
 	 */
 	public boolean enqueue(int element) {
-		// TODO
+		if(!isFull()){
+			queue[numberOfElements]= element;
+			numberOfElements++;
+			return true;
+
+		}
 		return false;
 	}
 
@@ -29,7 +40,16 @@ public class Queue {
 	 * @return the head of this queue, or {@code -1} if this queue is empty
 	 */
 	public int dequeue() {
-		// TODO
+		if (!isEmpty()){
+			int firstElement= queue[0];
+			for (int i = 0; i < numberOfElements-1; i++){
+				queue[i] = queue[i+1];
+			}
+			numberOfElements--;
+			
+			return firstElement;
+
+		}
 		return -1;
 	}
 
@@ -39,8 +59,8 @@ public class Queue {
 	 * @return {@code true} if this queue contains no elements
 	 */
 	public boolean isEmpty() {
-		// TDODO
-		return false;
+		
+		return numberOfElements==0;
 	}
 
 	/**
@@ -49,8 +69,8 @@ public class Queue {
 	 * @return {@code true} if this queue is full
 	 */
 	public boolean isFull() {
-		// TDODO
-		return false;
+		
+		return capacity == numberOfElements;
 	}
 
     /**
@@ -59,8 +79,8 @@ public class Queue {
      * @return the number of elements in this queue
      */
 	public int size() {
-		// TODO
-		return 0;
+		
+		return numberOfElements;
 	}
 
 }

@@ -4,8 +4,24 @@ import gui.Window;
 
 public class PongGui {
 
-    private static int WIDTH = 800;
-    private static  int HEIGHT = 600;
+   
+    
+
+
+    private static final int WIDTH = 800;
+    private static final int HEIGHT = 600;
+
+    public static int getWidth() {
+        return WIDTH;
+    }
+
+
+
+
+    public static int getHeight() {
+        return HEIGHT;
+    }
+
 
     public static void main(String[] args) {
         
